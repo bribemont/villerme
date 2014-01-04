@@ -1,0 +1,104 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag "podium", :media => "all" %>
+<% end %>
+<div id="main">
+  <div id="north">
+    <% unless browser.modern? %>
+    Nous vous conseillons de mettre votre navigateur à jour ou d'utiliser une version récente de Firefox, Chrome ou Safari.
+    <% end %>
+  </div>
+  <div id="content">
+    <%# link_to("", bienvenue_path, id: "aHeaderH1") %>
+    <div id="oHeaderH1"></div>
+    <div id="divHeaderH1"></div>
+    <%= link_to("", "http://www.fondation.univ-montp1.fr/", id: "aContentSouth", target: "_blank") %>
+  <!-- // overlays -->
+    <div class="yui3-g" id="header">
+      <div class="yui3-u-1-5"><h1></h1></div>
+      <div class="yui3-u-4-5" id="contact">
+        contact : <a href="mailto:fondation@univ-montp1.fr">fondation@univ-montp1.fr</a>
+      </div>
+    </div>
+    <div class="yui3-g">
+      <div class="yui3-u-2-3">
+        <div id="visuel">
+          <img src="/z/jpg/palmares.jpg" usemap="#palmares" alt="Cliquez sur son logo pour accéder au site partenaire.">
+          <map name="palmares">
+            <area coords="30,30,203,160"   href="#" alt="Grand Prix du Jury"        id="video1">
+            <area coords="422,183,595,313" href="#" alt="Prix du public"            id="video3">
+          </map>
+    </div>
+      </div>
+      <div class="yui3-u-1-3">
+        <div id="contentEast">
+          <%# image_tag("/z/jpg/contentEast.jpg") %>
+        <div id="scrollview-container">
+            <div id="scrollview-content" class="yui3-scrollview-loading">
+              <ul>
+              <% @images.each do |k, v| %>
+              <li>
+                <p><%= v %></p>
+                <%# resize_n_extent_h(325, "t/#{k}", "jpg", "#{k}x325", "jpg") ? image_tag("#{k}x325.jpg", alt: "#{v}") : nil %>
+                <%= image_tag "/z/jpg/#{k}x325.jpg", alt: "#{v}" %>
+              </li>
+              <% end %>
+              </ul>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="yui3-g">
+      <div class="yui3-u-2-3">
+        <div id="steps">
+          <%= link_to(image_tag("/z/png/oediv1.png"), "#", id: "oediv1") %>
+          <%= link_to(image_tag("/z/png/oediv3.png"), "#", id: "oediv3") %>
+          <%= link_to(image_tag("/z/png/oediv2.png"), "#", id: "oediv2") %>
+        </div>
+      </div>
+<!-- id="clap" -->
+      <div class="yui3-u-1-3">
+	      <div id="scrollview-pager">
+	          <button id="scrollview-prev" class="yui3-button">&larr;</button>
+	          <button id="scrollview-next" class="yui3-button">&rarr;</button>
+	      </div>
+      </div>
+    </div>
+    <div id="contentSouth">Avec l’aimable autorisation de Dalkia, CCMSA et la FNBTP.</div>
+  </div><!-- // fin de content -->
+  <div id="footer">
+  <div class="yui3-g">
+  <div class="yui3-u-1-24"></div>
+  <div class="yui3-u-23-24">
+  <div id="footerEast" style="text-align:center">
+  <img src="/z/jpg/y0B.jpg" usemap="#partners" alt="Cliquez sur son logo pour accéder au site partenaire.">
+  <map name="partners"> <!-- left, top, right, bottom -->
+  <area coords="0,0,60,100" href="http://direccte.gouv.fr/-accueil-3-.html" alt="DIRECCTE LR" target="_blank">
+  <area coords="61,0,145,50" href="http://www.carsat-lr.fr/" alt="Carsat LR" target="_blank">
+  <area coords="146,0,200,50" href="http://www.annuaire.com/restauration-collective/akte-services-akte-restauration-501907836/" alt="Akté" target="_blank">
+  <area coords="201,0,260,50" href="http://altamira-films.com/altamira-films/Accueil.html" alt="Altamira" target="_blank">
+  <area coords="261,0,325,50" href="http://www.ametra.asso.fr/WD160AWP/WD160Awp.exe/CONNECT/Portail_AmetraMontpellier" alt="AMETRA" target="_blank">
+  <area coords="326,0,410,50" href="http://www.apave.com/" alt="Apave" target="_blank">
+  <area coords="411,0,490,50" href="http://www.ardence.fr/" alt="Ardence" target="_blank">
+  <area coords="491,0,565,50" href="http://lr.capeb.fr/" alt="CAPEB" target="_blank">
+  <area coords="566,0,667,50" href="http://www.montpellier.cci.fr/" alt="CCI Montpellier" target="_blank">
+  <area coords="61,51,125,100" href="http://www.univ-montp1.fr/" alt="Université Montpellier 1" target="_blank">
+  <area coords="126,51,200,100" href="http://www.heraultjuridique.com/" alt="Hérault Juridique" target="_blank">
+  <area coords="201,51,275,100" href="http://www.lalettrem.fr/" alt="Lettre M" target="_blank">
+  <area coords="276,51,365,100" href="http://www.objectif-lr.com/" alt="Objectif LR" target="_blank">
+  <area coords="366,51,455,100" href="http://www.preventionbtp.fr/" alt="OPPBTP" target="_blank">
+  <area coords="456,51,570,100" href="http://www.livres-medicaux.com/" alt="Sauramps" target="_blank">
+  <area coords="571,51,667,100" href="http://www.thau-sante-travail.fr/" alt="Thau Santé Travail" target="_blank">
+  <area coords="668,0,733,100" href="http://www.ac-montpellier.fr/" alt="Académie de Montpellier" target="_blank">
+  </map>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div id="feedbacks" class="yui3-loading">
+    <div id="fContainer" class="yui3-widget-bd"></div>
+  </div>
+</div><!-- // fin de main -->
+<% content_for :js do %>
+  <%= javascript_include_tag "podium" %>
+<% end %>

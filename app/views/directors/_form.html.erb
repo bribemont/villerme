@@ -1,0 +1,50 @@
+<%= form_for(@director) do |f| %>
+  <% if @director.errors.any? %>
+    <p id="error_explanation">
+      <h2>L’enregistrement a échoué : <%= pluralize(@director.errors.count, "erreur") %></h2>
+
+      <ul>
+      <% @director.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </p>
+  <% end %>
+	<fieldset>
+	  <p>
+	    <%= f.label :etablissement, "Nom de l’établissement" %><br />
+	    <%= f.text_field :etablissement %>
+	  </p>
+	  <p>
+	    <%= f.label :adresse, "Adresse" %><br />
+	    <%= f.text_area :adresse %>
+	  </p>
+	  <p>
+	    <%= f.label :enseignant, "Nom de l’enseignant responsable de l’inscription" %><br />
+	    <%= f.text_field :enseignant %>
+	  </p>
+	  <p>
+	    <%= f.label :coordonnees, "Coordonnées" %><br />
+	    <%= f.text_area :coordonnees %>
+	  </p>
+	  <p>
+	    <%= f.label :classe, "Classe concernée" %><br />
+	    <%= f.text_field :classe %>
+	  </p>
+	</fieldset>
+	<fieldset>
+	  <p>
+	    <%= f.label :atteste, "J’atteste avoir pris connaissance du règlement d’attribution du prix jeunes réalisateurs" %><br />
+	    <%= f.check_box :atteste %>
+	  </p>
+	  <p>
+	    <%= f.label :declare, "Je déclare pré inscrire la classe susnommée au prix jeunes réalisateurs" %><br />
+	    <%= f.check_box :declare %>
+	  </p>
+	  <p>
+	    <%= f.label :lieu, "Date et lieu" %><br />
+	    <%= f.text_field :lieu %>
+	  </p>
+	</fieldset>
+	<p style="text-align: center;"><%= f.submit "Valider", class: "yui3-button" %></p>
+<% end %>

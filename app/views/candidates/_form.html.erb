@@ -1,0 +1,172 @@
+<%= form_for(@candidate) do |f| %>
+  <% if @candidate.errors.any? %>
+    <p id="error_explanation">
+      <h2>L’enregistrement a échoué : <%= pluralize(@candidate.errors.count, "erreur") %></h2>
+
+      <ul>
+      <% @candidate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </p>
+  <% end %>
+	<h1>Le Film</h1>
+	<fieldset>
+		<p>
+			<%= f.label :f1, "Titre" %><br />
+			<%= f.text_field :f1 %>
+		</p>
+		<p>
+			<%= f.label :f2, "Année de réalisation" %><br />
+			<%= f.date_select :f2, :start_year => 1910, discard_day: true, discard_month: true %> <!-- , include_blank: true -->
+		</p>
+		<p>
+			<%= f.label :f3, "Durée" %><br />
+			<%= f.number_field :f3, in: 1...60 %>
+		</p>
+		<p>
+			<%= f.label :f4, "Support" %><br />
+			<%= f.text_field :f4, disabled: true, placeholder: "DVD vidéo ou CD-Rom Mac ou PC" %>
+		</p>
+		<h2>Réalisation</h2>
+		<p>
+			<%= f.label :r1, "Réalisation externe ?" %><br />
+			Non <%= f.radio_button :r1, false, checked: true %>
+			Oui <%= f.radio_button :r1, true %>
+		</p>
+		<p>
+			<%= f.label :r2, "Dans ce cas, indiquez les coordonnées de l’entreprise de production" %><br />
+			<%= f.text_field :r2 %>
+		</p>
+		<h2>Equipe</h2>
+		<p>
+			<%= f.label :e1, "Réalisateur" %><br />
+			<%= f.text_field :e1 %>
+		</p>
+		<p>
+			<%= f.label :e2, "Scénariste" %><br />
+			<%= f.text_field :e2 %>
+		</p>
+		<p>
+			<%= f.label :e3, "Cameramen" %><br />
+			<%= f.text_field :e3 %>
+		</p>
+		<p>
+			<%= f.label :e4, "Monteur" %><br />
+			<%= f.text_field :e4 %>
+		</p>
+		<p>
+			<%= f.label :e5, "Musiciens" %><br />
+			<%= f.text_field :e5 %>
+		</p>
+		<p>
+			<%= f.label :e6, "Autres" %><br />
+			<%= f.text_area :e6 %>
+		</p>
+		<h2>Spécialistes</h2>
+		<p>
+			<%= f.label :s1, "Le film a-t-il été conçu et réalisé avec des spécialistes de la santé-sécurité au travail ?" %><br />
+			Non <%= f.radio_button :s1, false, checked: true %>
+			Oui <%= f.radio_button :s1, true %>
+		</p>
+		<p>
+			<%= f.label :s2, "Si oui, lesquels ?" %><br />
+			<%= f.text_area :s2 %>
+		</p>
+		<p>
+			<%= f.label :f8, "Présence de comédiens professionnels ?" %><br />
+			Non <%= f.radio_button :f8, false, checked: true %>
+			Oui <%= f.radio_button :f8, true %>
+		</p>
+		<p>
+			<%= f.label :f9, "Présence de salarié(es) de l’entreprise ?" %><br />
+			Non <%= f.radio_button :f9, false, checked: true %>
+			Oui <%= f.radio_button :f9, true %>
+		</p>
+		<p>
+			<%= f.label :f10, "Synopsis" %><br />
+			<%= f.text_area :f10 %>
+		</p>
+		<p>
+			<%= f.label :f11, "Autres informations utiles" %><br />
+			<%= f.text_area :f11 %>
+		</p>
+	</fieldset>
+	<h1>L’Entreprise/Organisme/Branche professionnelle</h1>
+	<fieldset>
+		<p>
+			<%= f.label :o1, "Dénomination" %><br />
+			<%= f.text_field :o1 %>
+		</p>
+		<p>
+			<%= f.label :o2, "Siège social (adresse)" %><br />
+			<%= f.text_area :o2 %>
+		</p>
+		<p>
+			<%= f.label :o3, "Groupe (s’il y a lieu)" %><br />
+			<%= f.text_field :o3 %>
+		</p>
+		<p>
+			<%= f.label :o4, "Domaine d’activité" %><br />
+			<%= f.text_field :o4 %>
+		</p>
+		<p>
+			<%= f.label :o5, "Nombre de salariés" %><br />
+			<%= f.number_field :o5, in: 1...1000000 %>
+		</p>
+		<p>
+			<%= f.label :email, "Adresse courriel du contact" %><br />
+			<%= f.text_field :email %>
+		</p>
+		<p>
+			<%= f.label :o6, "Autres informations utiles" %><br />
+			<%= f.text_area :o6 %>
+		</p>
+	</fieldset>
+	<h1>L’Action</h1>
+	<fieldset>
+		<p>
+			<%= f.label :a1, "Quel est le service de l’entreprise qui a demandé la réalisation du film ?" %><br />
+			<%= f.text_field :a1 %>
+		</p>
+		<p>
+			<%= f.label :a2, "Quels sont les motifs de cette demande ?" %><br />
+			<%= f.text_area :a2 %>
+		</p>
+		<p>
+			<%= f.label :a3, "La réalisation du film est-elle un élément d'une stratégie globale ?" %><br />
+			Non <%= f.radio_button :a3, false, checked: true %>
+			Oui <%= f.radio_button :a3, true %>
+		</p>
+		<p>
+			<%= f.label :a4, "Quel est le public visé ?" %><br />
+			<%= f.text_area :a4 %>
+		</p>
+		<p>
+			<%= f.label :a5, "Quels sont les résultats attendus ?" %><br />
+			<%= f.text_area :a5 %>
+		</p>
+		<p>
+			<%= f.label :a6, "Quelles sont (ont été) les circonstances de diffusion ?" %><br />
+			<%= f.text_area :a6 %>
+		</p>
+		<p>
+			<%= f.label :a7, "Quels sont les résultats constatés ?" %><br />
+			<%= f.text_area :a7 %>
+		</p>
+		<p>
+			<%= f.label :a8, "Avez-vous avez mis en place un système d’évaluation de ces résultats ?" %><br />
+			Non <%= f.radio_button :a8, false, checked: true %>
+			Oui <%= f.radio_button :a8, true %>
+		</p>
+		<p>
+			<%= f.label :a9, "Quelles ont été les réactions du public visé ?" %><br />
+			<%= f.text_area :a9 %>
+		</p>
+		<p>
+			<%= f.label :a10, "Autres informations utiles" %><br />
+			<%= f.text_area :a10 %>
+		</p>
+	</fieldset>
+	<p style="text-align: center;"><%= f.submit "Valider", class: "yui3-button" %></p>
+<% end %>

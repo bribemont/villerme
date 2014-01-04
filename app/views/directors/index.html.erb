@@ -1,0 +1,37 @@
+<h1>Listing directors</h1>
+
+<table>
+  <tr>
+    <th>Etablissement</th>
+    <th>Adresse</th>
+    <th>Enseignant</th>
+    <th>Coordonnees</th>
+    <th>Classe</th>
+    <th>Atteste</th>
+    <th>Declare</th>
+    <th>Lieu</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @directors.each do |director| %>
+  <tr>
+    <td><%= director.etablissement %></td>
+    <td><%= director.adresse %></td>
+    <td><%= director.enseignant %></td>
+    <td><%= director.coordonnees %></td>
+    <td><%= director.classe %></td>
+    <td><%= director.atteste %></td>
+    <td><%= director.declare %></td>
+    <td><%= director.lieu %></td>
+    <td><%= link_to 'Show', director %></td>
+    <td><%= link_to 'Edit', edit_director_path(director) %></td>
+    <td><%= link_to 'Destroy', director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Director', new_director_path %>

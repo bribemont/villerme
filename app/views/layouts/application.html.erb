@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Les Rencontres Villermé &middot; <%= content_for?(:title) ? yield(:title) : "19 et 20 mars 2014" %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <link rel="stylesheet" type="text/css" href="/y/build/cssnormalize/cssnormalize-min.css">
+  <link rel="stylesheet" type="text/css" href="/y/build/cssfonts/cssfonts-min.css">
+  <link rel="stylesheet" type="text/css" href="/y/build/cssgrids-responsive/cssgrids-responsive-min.css">
+  <link rel="stylesheet" type="text/css" href="/y/build/cssbutton/cssbutton-min.css">
+  <script src="/y/build/yui/yui-min.js"></script>
+  <%= yield(:css) if content_for?(:css) %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="yui3-skin-sam">
+
+<%= yield %>
+
+<%= yield(:js) if content_for?(:js) %>
+</body>
+</html>

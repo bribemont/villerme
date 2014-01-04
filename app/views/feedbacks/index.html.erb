@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Les Rencontres Villermé</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssreset/cssreset-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssfonts/cssfonts-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssgrids/grids-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssbase/cssbase-min.css" />
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "raphael" %>
+  <%= javascript_include_tag "morris" %>
+  <%= csrf_meta_tags %>
+<style type="text/css">
+body {
+    margin: auto; /* center in viewport */
+    width: 960px;
+}
+</style>
+</head>
+<body>
+	<h1>Fréquentation</h1>
+	<div id="frequentation" style="max-width:62%;margin:auto;"></div>
+	<h1>Journée du 20 mars</h1>
+	<div class='yui3-g'>
+		<div class="yui3-u-1-4" id="jour-1-alpha"></div>
+		<div class="yui3-u-1-4" id="jour-1-beta"></div>
+		<div class="yui3-u-1-4" id="jour-1-gamma"></div>
+		<div class="yui3-u-1-4" id="jour-1-delta"></div>
+	</div>
+	<div class='yui3-g'>
+		<div class="yui3-u-1-4" id="jour-1-epsilon"></div>
+		<div class="yui3-u-1-4" id="jour-1-dzeta"></div>
+		<div class="yui3-u-1-4" id="jour-1-eta"></div>
+		<div class="yui3-u-1-4" id="jour-1-theta"></div>
+	</div>
+	<h2>Suggestions</h2>
+	<div>
+		<% @feedbacks.each do |feedback| %>
+			<p><%= feedback.sugg0320 %></p>
+		<% end %>
+	</div>
+	<h1>Journée du 22 mars</h1>
+	<div class='yui3-g'>
+		<div class="yui3-u-1-3" id="jour-2-alpha"></div>
+		<div class="yui3-u-1-3" id="jour-2-beta"></div>
+		<div class="yui3-u-1-3" id="jour-2-gamma"></div>
+	</div>
+	<div class='yui3-g'>
+		<div class="yui3-u-1-3" id="jour-2-delta"></div>
+		<div class="yui3-u-1-3" id="jour-2-epsilon"></div>
+		<div class="yui3-u-1-3" id="jour-2-dzeta"></div>
+	</div>
+	<div class='yui3-g'>
+		<div class="yui3-u-1-3" id="jour-2-eta"></div>
+		<div class="yui3-u-1-3" id="jour-2-theta"></div>
+		<div class="yui3-u-1-3" id="jour-2-omicron"></div>
+	</div>
+	<h2>Suggestions</h2>
+	<div>
+		<% @feedbacks.each do |feedback| %>
+			<p><%= feedback.sugg0322 %></p>
+		<% end %>
+	</div>
+<script type="text/javascript">
+Morris.Bar({
+  element: 'frequentation',
+  data: [
+    { y: 'matin du 20 mars', a: <%= Feedback.where("mati0320").count %> },
+    { y: 'après-midi du 20 mars', a: <%= Feedback.where("tant0320").count %> },
+    { y: 'matin du 22 mars', a: <%= Feedback.where("mati0322").count %> },
+    { y: 'après-midi du 22 mars', a: <%= Feedback.where("tant0322").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: ['Fréquentation']
+});
+Morris.Bar({
+  element: 'jour-1-alpha',
+  data: [
+    { y: 'Attentes', a: <%= Feedback.where("atte0320 = 0").count %>, b: <%= Feedback.where("atte0320 = 1").count %>, c: <%= Feedback.where("atte0320 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Pas du tout', 'Moyennement', 'Totalement']
+});
+Morris.Bar({
+  element: 'jour-1-beta',
+  data: [
+    { y: 'Technicité', a: <%= Feedback.where("tech0320 = 0").count %>, b: <%= Feedback.where("tech0320 = 1").count %>, c: <%= Feedback.where("tech0320 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Pas assez technique', 'Comme il le fallait', 'Trop technique']
+});
+Morris.Bar({
+  element: 'jour-1-gamma',
+  data: [
+    { y: 'Aspect concret', a: <%= Feedback.where("conc0320 = 0").count %>, b: <%= Feedback.where("conc0320 = 1").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Pas assez concrète', 'Suffisamment concrète']
+});
+Morris.Bar({
+  element: 'jour-1-delta',
+  data: [
+    { y: 'Application', a: <%= Feedback.where("appl0320 = 0").count %>, b: <%= Feedback.where("appl0320 = 1").count %>, c: <%= Feedback.where("appl0320 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Non', 'Oui', 'Ne sait pas']
+});
+Morris.Bar({
+  element: 'jour-1-epsilon',
+  data: [
+    { y: 'Rôle des intervenants', a: <%= Feedback.where("role0320 = 0").count %>, b: <%= Feedback.where("role0320 = 1").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Non : idée imprécise', 'Oui : idée précise']
+});
+Morris.Bar({
+  element: 'jour-1-dzeta',
+  data: [
+    { y: 'Articulation', a: <%= Feedback.where("arti0320 = 0").count %>, b: <%= Feedback.where("arti0320 = 1").count %>, c: <%= Feedback.where("arti0320 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisante', 'Satisfaisante', 'Très satisfaisante']
+});
+Morris.Bar({
+  element: 'jour-1-eta',
+  data: [
+    { y: 'Approfondir', a: <%= Feedback.where("appr0320 = 0").count %>, b: <%= Feedback.where("appr0320 = 1").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['La partie juridique', 'La partie santé']
+});
+Morris.Bar({
+  element: 'jour-1-theta',
+  data: [
+    { y: 'Complément aux enseignements', a: <%= Feedback.where("etud0320 = 0").count %>, b: <%= Feedback.where("etud0320 = 1").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Non', 'Oui']
+});
+Morris.Bar({
+  element: 'jour-2-alpha',
+  data: [
+    { y: 'Chronologie', a: <%= Feedback.where("chro0322 = 0").count %>, b: <%= Feedback.where("chro0322 = 1").count %>, c: <%= Feedback.where("chro0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisante', 'Satisfaisante', 'Très satisfaisante']
+});
+Morris.Bar({
+  element: 'jour-2-beta',
+  data: [
+    { y: 'Durée', a: <%= Feedback.where("dure0322 = 0").count %>, b: <%= Feedback.where("dure0322 = 1").count %>, c: <%= Feedback.where("dure0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisante', 'Satisfaisante', 'Très satisfaisante']
+});
+Morris.Bar({
+  element: 'jour-2-gamma',
+  data: [
+    { y: 'Nombre', a: <%= Feedback.where("nomb0322 = 0").count %>, b: <%= Feedback.where("nomb0322 = 1").count %>, c: <%= Feedback.where("nomb0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisant', 'Satisfaisant', 'Très satisfaisant']
+});
+Morris.Bar({
+  element: 'jour-2-delta',
+  data: [
+    { y: 'Formule', a: <%= Feedback.where("form0322 = 0").count %>, b: <%= Feedback.where("form0322 = 1").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Passer à une autre organisation', 'Retenir la formule']
+});
+Morris.Bar({
+  element: 'jour-2-epsilon',
+  data: [
+    { y: 'Lieu', a: <%= Feedback.where("lieu0322 = 0").count %>, b: <%= Feedback.where("lieu0322 = 1").count %>, c: <%= Feedback.where("lieu0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisant', 'Satisfaisant', 'Très satisfaisant']
+});
+Morris.Bar({
+  element: 'jour-2-dzeta',
+  data: [
+    { y: 'Informations', a: <%= Feedback.where("info0322 = 0").count %>, b: <%= Feedback.where("info0322 = 1").count %>, c: <%= Feedback.where("info0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisantes', 'Satisfaisantes', 'Très satisfaisantes']
+});
+Morris.Bar({
+  element: 'jour-2-eta',
+  data: [
+    { y: 'Inscription', a: <%= Feedback.where("proc0322 = 0").count %>, b: <%= Feedback.where("proc0322 = 1").count %>, c: <%= Feedback.where("proc0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisante', 'Satisfaisante', 'Très satisfaisante']
+});
+Morris.Bar({
+  element: 'jour-2-theta',
+  data: [
+    { y: 'Accueil', a: <%= Feedback.where("accu0322 = 0").count %>, b: <%= Feedback.where("accu0322 = 1").count %>, c: <%= Feedback.where("accu0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisant', 'Satisfaisant', 'Très satisfaisant']
+});
+Morris.Bar({
+  element: 'jour-2-omicron',
+  data: [
+    { y: 'Buffet', a: <%= Feedback.where("buff0322 = 0").count %>, b: <%= Feedback.where("buff0322 = 1").count %>, c: <%= Feedback.where("buff0322 = 2").count %> }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b', 'c'],
+  labels: ['Insatisfaisant', 'Satisfaisant', 'Très satisfaisant']
+});
+</script>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+production:
+  adapter: adapter
+  encoding: encoding
+  database: database
+  pool: pool
+  host: host
+  username: username
+  password: password
