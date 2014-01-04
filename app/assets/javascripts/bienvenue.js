@@ -144,7 +144,7 @@ function(Y) {
                 slidercolor: "ffffff"
             }
         };
-        var myswf = new Y.SWF("#visuel", "/player_flv_mini.swf", params);
+        var myswf = new Y.SWF("#visuel", "/z/swf/player_flv_mini.swf", params);
     });
 
     var programme1 = Y.one('#vRNFhOvEQC4bN'),
