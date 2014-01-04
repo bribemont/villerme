@@ -6,7 +6,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'unicorn'
 gem 'capistrano', '2.11.2'
 gem 'activerecord-postgres-hstore'

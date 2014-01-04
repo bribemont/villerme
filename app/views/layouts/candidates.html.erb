@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			Les Rencontres Villermé
-		</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="/y/build/cssreset/cssreset-min.css" />
-		<link rel="stylesheet" href="/y/build/cssfonts/cssfonts-min.css" />
-		<link rel="stylesheet" href="/y/build/cssbase/cssbase-min.css" />
-		<link rel="stylesheet" href="/y/build/cssbutton/cssbutton.css" />
-	    <%= stylesheet_link_tag "candidates", :media => "all" %>
-		<%= csrf_meta_tags %>
-	</head>
-	<body>
-		<%= yield %>
-	</body>
+  <head>
+    <title>
+      Les Rencontres Villermé
+    </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/y/build/cssreset/cssreset-min.css" />
+    <link rel="stylesheet" href="/y/build/cssfonts/cssfonts-min.css" />
+    <link rel="stylesheet" href="/y/build/cssbase/cssbase-min.css" />
+    <link rel="stylesheet" href="/y/build/cssbutton/cssbutton.css" />
+      <%= stylesheet_link_tag "candidates", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
 </html>
