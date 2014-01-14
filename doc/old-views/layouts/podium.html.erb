@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Les Rencontres Villermé - Palmarès 2013</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssreset/cssreset-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssfonts/cssfonts-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssgrids/cssgrids-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssbase/cssbase-min.css" />
+  <script src="/y/build/yui/yui-min.js"></script>
+<style>
+#main{margin:auto;width:1037px;}
+
+#north{height:38px;text-align:right;background-color:black;color:white;font-weight:bold;padding-right:1em}
+
+#content,#footer{margin:0 33px;}
+#content{height:564px;}
+#header {
+  height: 100px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-image:<%= ezilitxet(943, 62, "transparent", "/library/Fonts/SerifaStd-Bold.otf", 62, "ae191e", "SouthEast", "les rencontres villermé", "header", "png") ? "url(/assets/podium/header.png)" : "none" %>;
+}
+#header h1{height:88px;margin-top:0;}
+#contact {text-align:right;font-weight:bold}
+#contact a {color:#ae191e}
+
+#visuel{height:343px;text-align:right;padding:0px 10px;overflow:hidden;}
+#visuel h2{color:#AE191E;}
+#visuel h2 span{color:black;}
+#visuel h3,h4{margin:0px;}
+#visuel h4{text-align:center;color:#AE191E;}
+#visuel p{margin-bottom:.33em;}
+#visuel, #steps{border-bottom:none;border-right:2px solid #AE191E}
+#visuel ul{list-style-type:none;margin:.5px;}
+
+#contentEast{height:343px;overflow:hidden;}
+
+#steps{display:block;height:80px;text-align:center;}
+/*#steps{border-top:none;}*/
+
+#contentSouth{height:30px;}
+
+#footerWest{display:block;height:30px;}
+#footerEast{height:60px;}
+
+div.holder,div.holder address{margin:1em;}
+.field_with_errors label{padding:2px;border:2px solid #AE191E;display:table;}
+
+#apave {background-image:url('/assets/apave.jpg');background-position:0% 0%;background-repeat:no-repeat;}
+
+/*#candidatures{height:450px;}*/
+.yui3-loading{display:none;}
+.yui3-panel{outline:none;}
+.yui3-panel-content .yui3-widget-hd{font-weight:bold;}
+.yui3-panel-content .yui3-widget-bd{padding:0px;}
+#feedbacks iframe, .yui3-widget-bd iframe{width:100%;height:500px;border:none;margin:0px;padding:0px}
+#feedbacks .yui3-button {background-color:#1b7ae0;color:white}
+</style>
+  <%= csrf_meta_tags %>
+</head>
+<body class="yui3-skin-sam">
+  <%= yield %>
+  <%= javascript_include_tag "podium" %>
+</body>
+</html>

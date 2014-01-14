@@ -1,0 +1,18 @@
+<h1>Mailings</h1>
+
+<p style="text-align:center">
+	<%= link_to 'Nouveau mailing', new_newsletter_path, class: "yui3-button" %> - 
+	<%= link_to 'Retour au site', root_url, class: "yui3-button" %>
+</p>
+<hr />
+<% @newsletters.each do |newsletter| %>
+	<h2><%= newsletter.created_at %></h2>
+	<h3>Destinataires</h3>
+	<div>
+		<%= newsletter.a %>
+	</div>
+	<h3>Message</h3>
+	<div>
+		<%= newsletter.content %>
+	</div>
+<% end %>

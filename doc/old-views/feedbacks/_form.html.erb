@@ -1,0 +1,141 @@
+<style>
+.lgd1 {font-size:138%;font-weight:bold;padding:.3em;color:#2647a0}
+.lgd2 {font-size:115%;font-weight:bold;padding:.5em;color:#2647a0}
+.lgd3 {font-size:100%;font-weight:bold;padding:1em;color:#2647a0}
+label {font-weight:bolder;padding-bottom:.3em;}
+</style>
+<%= form_for(@feedback) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2>Nous avons trouvé <%= pluralize(@feedback.errors.count, "erreur") %>. Veuillez vous corriger&nbsp;:</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<fieldset>
+	<legend class="lgd1">Avez-vous assisté</legend>
+	<fieldset>
+		<legend class="lgd2">A la journée du 20 mars&nbsp;?</legend>
+		<p>
+			<%= f.check_box :mati0320 %>
+			<%= f.label "Le matin" %>
+		</p>
+		<p>
+			<%= f.check_box :tant0320 %>
+			<%= f.label "L’après-midi" %>
+		</p>
+	</fieldset>
+	<fieldset>
+		<legend class="lgd2">A la journée du 22 mars&nbsp;?</legend>
+		<p>
+			<%= f.check_box :mati0322 %>
+			<%= f.label "Le matin (projections)" %>
+		</p>
+		<p>
+			<%= f.check_box :tant0322 %>
+			<%= f.label "L’après-midi (table ronde et remise des prix)" %>
+		</p>
+	</fieldset>
+</fieldset>
+<fieldset>
+	<legend class="lgd1">Merci de nous donner votre avis ci-dessous&nbsp;:</legend>
+	<fieldset>
+		<legend class="lgd2">La journée du 20&nbsp;:</legend>
+		<p>
+			<%= f.label "Correspondait à vos attentes :" %><br/>
+			<%= f.radio_button :atte0320, "2" %> totalement <%= f.radio_button :atte0320, "1" %> moyennement <%= f.radio_button :atte0320, "0" %> pas du tout
+		</p>
+		<fieldset>
+			<legend class="lgd3">Était&nbsp;:</legend>
+			<p>
+				<%= f.radio_button :tech0320, "2" %> trop technique <%= f.radio_button :tech0320, "0" %> pas assez technique <%= f.radio_button :tech0320, "1" %> comme il le fallait
+			</p>
+			<p>
+				<%= f.radio_button :conc0320, "1" %> Suffisamment concrète <%= f.radio_button :conc0320, "0" %> pas assez concrète
+			</p>
+		</fieldset>
+		<p>
+			<%= f.label "Avez-vous mis ou pensez-vous mettre en application ce que vous y avez entendu :" %><br/>
+			<%= f.radio_button :appl0320, "1" %> Oui <%= f.radio_button :appl0320, "0" %> non <%= f.radio_button :appl0320, "2" %> je ne sais pas
+		</p>
+		<p>
+			<%= f.label "Avez-vous pu vous faire une idée précise du rôle des divers intervenants dans le domaine étudié ce jour ?" %><br/>
+			<%= f.radio_button :role0320, "1" %> oui <%= f.radio_button :role0320, "0" %> non
+		</p>
+		<p>
+			<%= f.label "L’articulation entre les interventions vous a-t-elle semblé :" %><br/>
+			<%= f.radio_button :arti0320, "1" %> satisfaisante <%= f.radio_button :arti0320, "2" %> très satisfaisante <%= f.radio_button :arti0320, "0" %> insatisfaisante
+		</p>
+		<fieldset>
+			<p>
+				<%= f.label "Vos suggestions pour l’an prochain (thème, organisation, intervenants…)" %><br/>
+				<%= f.text_area :sugg0320 %>
+			</p>
+			<p>
+				<%= f.label "Faut-il approfondir davantage" %><br/>
+				<%= f.radio_button :appr0320, "0" %> la partie juridique&nbsp;? <%= f.radio_button :appr0320, "1" %> la partie santé&nbsp;?
+			</p>
+			<p>
+				<%= f.label "Si vous êtes étudiant(e) : cette journée a constitué un bon complément aux enseignements reçus à l’université ?" %><br/>
+				<%= f.radio_button :etud0320, "1" %> oui <%= f.radio_button :etud0320, "0" %> non
+			</p>
+		</fieldset>
+	</fieldset>
+</fieldset>
+<fieldset>
+	<legend class="lgd1">La journée du 22&nbsp;:</legend>
+	<p>
+		<%= f.label "La chronologie de la journée (projections le matin, table ronde et remise des prix l’après midi) vous a-t-elle semblé :" %><br/>
+		<%= f.radio_button :chro0322, "1" %> satisfaisante <%= f.radio_button :chro0322, "2" %> très satisfaisante <%= f.radio_button :chro0322, "0" %> insatisfaisante
+	</p>
+	<p>
+		<%= f.label "La durée des films présentés vous a-t-elle semblé :" %><br/>
+		<%= f.radio_button :dure0322, "1" %> satisfaisante <%= f.radio_button :dure0322, "2" %> très satisfaisante <%= f.radio_button :dure0322, "0" %> insatisfaisante
+	</p>
+	<p>
+		<%= f.label "Le nombre de films présentés vous a-t-il semblé :" %><br/>
+		<%= f.radio_button :nomb0322, "1" %> satisfaisant <%= f.radio_button :nomb0322, "2" %> très satisfaisant <%= f.radio_button :nomb0322, "0" %> insatisfaisant
+	</p>
+	<fieldset>
+		<legend class="lgd2">L’organisation&nbsp;:</legend>
+		<p>
+			<%= f.label "Faut-il" %><br/>
+			<%= f.radio_button :form0322, "1" %> retenir la formule de cette année (deux jours espacés d’une journée)&nbsp;?<br/>ou<br/><%= f.radio_button :form0322, "0" %> passer à une autre organisation&nbsp;?
+		</p>
+		<p>
+			<%= f.label "Le lieu était-il :" %><br/>
+			<%= f.radio_button :lieu0322, "1" %> satisfaisant <%= f.radio_button :lieu0322, "2" %> très satisfaisant <%= f.radio_button :lieu0322, "0" %> insatisfaisant
+		</p>
+		<p>
+			<%= f.label "Les informations qui vous ont été données ont été :" %><br/>
+			<%= f.radio_button :info0322, "1" %> satisfaisantes <%= f.radio_button :info0322, "2" %> très satisfaisantes <%= f.radio_button :info0322, "0" %> insatisfaisantes
+		</p>
+		<p>
+			<%= f.label "La procédure d’inscription était-elle :" %><br/>
+			<%= f.radio_button :proc0322, "1" %> satisfaisante <%= f.radio_button :proc0322, "2" %> très satisfaisante <%= f.radio_button :proc0322, "0" %> insatisfaisante
+		</p>
+		<p>
+			<%= f.label "L’accueil était-il :" %><br/>
+			<%= f.radio_button :accu0322, "1" %> satisfaisant <%= f.radio_button :accu0322, "2" %> très satisfaisant <%= f.radio_button :accu0322, "0" %> insatisfaisant
+		</p>
+		<p>
+			<%= f.label "Le buffet et les pauses étaient-ils :" %><br/>
+			<%= f.radio_button :buff0322, "1" %> satisfaisants <%= f.radio_button :buff0322, "2" %> très satisfaisants <%= f.radio_button :buff0322, "0" %> insatisfaisants
+		</p>
+	</fieldset>
+	<p>
+		<%= f.label "vos suggestions pour l’an prochain :" %><br/>
+		<%= f.text_area :sugg0322 %>
+	</p>
+</fieldset>
+
+  <div class="actions" style="text-align:center">
+    <%= f.submit "Soumettre", class: "yui3-button" %>
+  </div>
+<% end %>

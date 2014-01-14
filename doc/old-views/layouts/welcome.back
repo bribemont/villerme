@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Les Rencontres Villermé</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssreset/cssreset-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssfonts/cssfonts-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssgrids/cssgrids-min.css" />
+  <link rel="stylesheet" type="text/css" href="/y/build/cssbase/cssbase-min.css" />
+  <%= stylesheet_link_tag "welcome", :media => "all" %>
+  <script src="/y/build/yui/yui-min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="main" class="yui3-skin-sam">
+		  <%= link_to "", root_url, id: "north" %>
+		  <div id="content">
+			<%= im_buttonize("eIQMSwb9MjEiM", 150, 150, "/library/Fonts/SerifaStd-Black.otf", 17, "FFFFFF", "Center", "je\nparticipe\nau\nconcours", "uHaaMBgaXBJW6") ? link_to("", root_url, id: "uHaaMBgaXBJW6") : nil %><!-- // overlay -->
+	        <div class="yui3-g" id="header" style="background-image:<%= im_textilize(943, 62, "transparent", "/library/Fonts/SerifaStd-Bold.otf", 62, "ae191e", "SouthEast", "les rencontres villermé", "s7KgcaumCpIj1", "png") ? "url('/assets/s7KgcaumCpIj1.png')" : "none" %>">
+	            <div class="yui3-u-1-5">
+	                <h1></h1>
+	            </div>
+	            <div class="yui3-u-4-5">
+	                <div id="headerEast"></div>
+	            </div>
+	        </div>
+			<%= im_resize_h(140, "T2tq9Av82QNm6", "tif", "T2tq9Av82QNm6", "jpg") ? link_to("", "http://www.fondation.univ-montp1.fr/", id: "T2tq9Av82QNm6", target: "_blank") : nil %><!-- // overlay -->
+	        <div class="yui3-g">
+	            <div class="yui3-u-2-3">
+	                <div id="visuel">
+						<h2><%= raw @ardence.title %>&nbsp;?</h2>
+						<%= raw @ardence.content %>
+	                </div>
+	            </div>
+	            <div class="yui3-u-1-3">
+	                <div id="contentEast">
+	                  <%= im_resize_w(323, "QeTg2rJP7FNBw", "png", "QeTg2rJP7FNBw", "jpg") ? image_tag("QeTg2rJP7FNBw.jpg") : nil %>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="yui3-g">
+	            <div class="yui3-u-2-3">
+	                <div id="steps">
+					  <%= im_stepize("éditorial", "vRNFhOvEQC4bM") ? link_to(image_tag("vRNFhOvEQC4bM.png"), root_url, id: "vRNFhOvEQC4bM") : nil %>
+					  <%= im_stepize("programme", "wRNFhOvEQC4bM") ? link_to(image_tag("wRNFhOvEQC4bM.png"), root_url, id: "wRNFhOvEQC4bM") : nil %>
+					  <%= im_stepize("prix", "xRNFhOvEQC4bM") ? link_to(image_tag("xRNFhOvEQC4bM.png"), root_url, id: "xRNFhOvEQC4bM") : nil %>
+					  <%= im_stepize("villermé", "yRNFhOvEQC4bM") ? link_to(image_tag("yRNFhOvEQC4bM.png"), root_url, id: "yRNFhOvEQC4bM") : nil %>
+					  <%# im_stepize("VIDÉO", "zRNFhOvEQC4bM") ? link_to(image_tag("zRNFhOvEQC4bM.png"), root_url, id: "zRNFhOvEQC4bM") : nil %>
+					  <%= im_stepize("partenaires", "aRNFhOvEQC4bM") ? link_to(image_tag("aRNFhOvEQC4bM.png"), root_url, id: "aRNFhOvEQC4bM") : nil %>
+					</div>
+	            </div>
+	            <div class="yui3-u-1-3"></div>
+	        </div>
+		    <div id="contentSouth">
+				<%= im_textilize(969, 28, "transparent", "/library/Fonts/SerifaStd-Bold.otf", 15, "000000", "Center", "Sous le haut patronage et avec la participation de Jean Auroux, ancien Ministre", "lvrfVA", "png") ? link_to(image_tag("lvrfVA.png"), "http://www.google.fr/search?q=Jean+Auroux", target: "_blank") : "" %>
+		    </div>
+		    </div>
+		    <!-- // fin de content -->
+		    <div id="footer">
+		      <div class="yui3-g">
+		          <div class="yui3-u-1-5">
+		              <a id="footerWest"></a>
+		          </div>
+		          <div class="yui3-u-4-5">
+		              <div id="footerEast">
+		              	<img src="/assets/<%= im_resize_h(60, "ptcbBPHYk", "png", "y0B", "jpg") ? "y0B.jpg" : "none" %>" usemap="#partners" alt="Cliquez sur son logo pour accéder au site partenaire.">
+						 <map name="partners">
+						  <area coords="0,0,110,60"    href="http://www.montpellier.cci.fr/" alt="CCI Montpellier" target="_blank"> <!-- left, top, right, bottom -->
+						  <area coords="110,0,165,60"  href="http://direccte.gouv.fr/-accueil-3-.html" alt="DIRECCTE LR" target="_blank">
+						  <area coords="165,0,270,60" href="http://www.ametra.asso.fr/WD160AWP/WD160Awp.exe/CONNECT/Portail_AmetraMontpellier" alt="AMETRA" target="_blank">
+						  <area coords="270,0,325,60" href="http://www.annuaire.com/restauration-collective/akte-services-akte-restauration-501907836/" alt="Akté" target="_blank">
+						  <area coords="325,0,450,60" href="http://ttp://www.livres-medicaux.com/" alt="Sauramps" target="_blank">
+						  <area coords="450,0,515,60" href="http://www.fhp-lr.com/" alt="FHP LR" target="_blank">
+						  <area coords="515,0,602,60" href="http://www.oppbtp.com/" alt="OPPBTP" target="_blank">
+						 </map>
+		              </div>
+		          </div>
+		      </div>
+		    </div>
+		    <div id="candidatures" class="yui-loading">
+		        <div class="yui3-widget-bd"><%= render 'candidates/form' %></div>
+		    </div>
+		</div><!-- // fin de main -->
+<%= javascript_include_tag "welcome" %>
+</body>
+</html>

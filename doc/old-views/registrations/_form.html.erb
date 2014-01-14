@@ -1,0 +1,105 @@
+<%= form_for(@registration) do |f| %>
+  <% if @registration.errors.any? %>
+    <p id="error_explanation">
+      <h2>L’enregistrement a échoué : <%= pluralize(@registration.errors.count, "erreur") %></h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </p>
+  <% end %>
+  <%= f.hidden_field :guest, value: params[:guest] %>
+  <h1>Structure</h1>
+  <fieldset>
+    <p>
+      <%= f.label "Nom de l'établissement (développer le sigle)" %><br />
+      <%= f.text_field :institution %>
+    </p>
+    <p>
+      <%= f.label "Activité principale" %><br />
+      <%= f.text_field :activity %>
+    </p>
+    <p>
+      <%= f.label "Adresse de l'établissement" %><br />
+      <%= f.text_area :address %>
+    </p>
+    <p>
+      <%= f.label "Code postal" %><br />
+      <%= f.text_field :draft_zip %> <!-- virtual -->
+    </p>
+    <p>
+      <%= f.label "Ville" %><br />
+      <%= f.text_field :city %>
+    </p>
+  </fieldset>
+  <h1>Participant</h1>
+  <fieldset>
+    <p>
+      <%= f.label "Nom" %><br />
+      <%= f.text_field :last_name %>
+    </p>
+    <p>
+      <%= f.label "Prénom" %><br />
+      <%= f.text_field :first_name %>
+    </p>
+    <p>
+      <%= f.label "Fonction" %><br />
+      <%= f.text_field :function %>
+    </p>
+    <p>
+      <%= f.label "Téléphone" %><br />
+      <%= f.text_field :draft_phone %> <!-- virtual -->
+    </p>
+    <p>
+      <%= f.label "Fax" %><br />
+      <%= f.text_field :draft_fax %> <!-- virtual -->
+    </p>
+    <p>
+      <%= f.label "Courriel" %><br />
+      <%= f.text_field :email %>
+    </p>
+  </fieldset>
+  <h1>Inscription(s)</h1>
+  <fieldset>
+  <h2>Participera</h2>
+    <del>
+      <%# f.check_box :hardship %> à la journée du 20 mars : Prévenir la pénibilité au travail : comment agir ?
+    </del>
+<p style="font-size:smaller;color:maroon">Les inscriptions pour le 20 sont closes&nbsp;: veuillez nous en excuser, mais le quota est atteint.</p>
+    <p>
+      <%= f.check_box :dedication %> à la rencontre dédicace avec Jean Auroux (Auditorium du Musée Fabre)
+    </p>
+    <p>
+      <%= f.check_box :festival %> à la journée du 22 mars : Festival du film <strong>La Santé au travail</strong>
+    </p>
+  <h2>Déjeuners</h2>
+    <del>
+      <%# f.check_box :lunch_1 %>
+      <%= f.label "Sera présent(e) au déjeuner du 20 mars, à 12 h 30" %><br />
+    </del>
+    <p>
+      <%= f.check_box :lunch_2 %>
+      <%= f.label "Sera présent(e) au déjeuner du 22 mars, à 12 h 30" %><br />
+    </p>
+<% unless params[:guest] %>
+  <h2>Règlement (obligatoire pour que l'inscription soit effective)</h2>
+    <p>
+      <%= f.label "Tarif forfaitaire : 20 €/jour" %><br />
+      Nombre de jours : <%= f.select :draft_charge, "<option>1</option>".html_safe, style: "width:20px" %> <!-- <option>2</option> -->
+      
+    </p>
+    <p>
+      <%= f.radio_button :draft_payment, "cheque" %> par chèque bancaire à l'ordre de : Monsieur l'Agent Comptable de l'Université Montpellier I<br />
+      <%= f.radio_button :draft_payment, "virement" %> par virement administratif. Dans ce cas, joindre IMPERATIVEMENT AU PREALABLE le bon d'engagement ou le bon de commande.
+    </p>
+    <p>
+      <%= f.label "Je souhaite recevoir une facture (à cocher si nécessaire) :" %><br />
+      <%= f.radio_button :draft_invoice, "institution" %> Au nom de mon établissement<br />
+      <%= f.radio_button :draft_invoice, "name" %> A mon nom
+    </p>
+<% end %>
+  </fieldset>
+  <p style="text-align: center;"><%= f.submit "Valider", class: "yui3-button" %></p>
+<% end %>

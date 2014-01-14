@@ -1,0 +1,105 @@
+<% ua = Hash[[ 'ie?', 'capable?', 'meta' ].zip([ browser.ie?, browser.capable?, browser.meta ])] %>
+<div id="main">
+
+  <div id="north">
+    <% if ( ua['ie?'] && /(\d+)$/.match(ua['meta'][1]).to_s.to_i < 9 ) %> <%# !(ua['capable?']) ||  %>
+      Nous vous conseillons de mettre votre navigateur à jour ou d'utiliser Firefox, Chrome, Safari, Opera, etc.
+    <% end %>
+  </div>
+
+  <div id="content">
+
+    <% if ezinottub("buttons/redCircle210", 170, 170, "/library/Fonts/SerifaStd-Black.otf", 15, "FFFFFF", "Center", "retour sur\nles rencontres\n2013", "aHeaderH1") %>
+	  <%= link_to("", bienvenue_path, id: "aHeaderH1") %>
+	<% end %>
+    <%# if ezinottub("buttons/redCircle150", 112, 80, "/library/Fonts/SerifaStd-Bold.otf", 12, "FFFFFF", "Center", "accueil", "divHeaderH1") %>
+      <!-- <div id="divHeaderH1"></div> -->
+    <%# end %>
+    <% if eziser(140, "buttons/fondation456", "tif", "podium/fondation", "jpg") %>
+      <%= link_to("", "http://www.fondation.univ-montp1.fr/", id: "aContentSouth", target: "_blank") %>
+     <% end %>
+    <%= eziser(150, "clap-oscar-100", "png", "ziyKaJweSm046", "png") ? link_to("", "http://www.preventionbtp.fr/Magazine/La-prevention-autrement/50-ans-de-prevention", id: "yizKaJweSm046", target: "_blank") : nil %>
+	<!-- // overlays -->
+
+    <div class="yui3-g" id="header">
+      <div class="yui3-u-1-5"><h1></h1></div>
+      <div class="yui3-u-4-5" id="contact">
+        contact : <a href="mailto:fondation@univ-montp1.fr">fondation@univ-montp1.fr</a>
+      </div>
+    </div>
+
+    <div class="yui3-g">
+      <div class="yui3-u-2-3">
+        <div id="visuel">
+          <img src="/assets/podium/palmares.jpg" usemap="#palmares" alt="Cliquez sur son logo pour accéder au site partenaire.">
+          <map name="palmares">
+            <area coords="30,30,203,160"   href="#" alt="Grand Prix du Jury"        id="video1">
+            <!-- <area coords="192,107,433,237" href="#" alt="Prix décerné par la CAPEB" id="video2"> -->
+            <area coords="422,183,595,313" href="#" alt="Prix du public"            id="video3">
+          </map>
+		</div>
+      </div>
+      <div class="yui3-u-1-3">
+        <div id="contentEast">
+          <%# if eziser(323, "podium/contentEast", "png", "podium/contentEast", "jpg") %>
+            <%= image_tag("/assets/podium/contentEast.jpg") %>
+          <%# end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="yui3-g">
+      <div class="yui3-u-2-3">
+        <div id="steps">
+          <%# ezipets("palmarès",         "podium/step1") ? link_to(image_tag("podium/step1.png"), root_url, id: "step1") : nil %>
+          <%# ezipets("infos\npratiques", "podium/step2") ? link_to(image_tag("podium/step2.png"), root_url, id: "step2") : nil %>
+          <%= ezipets("grand prix\ndu jury",     "podium/oediv1") ? link_to(image_tag("podium/oediv1.png"), root_url, id: "oediv1") : nil %>
+          <%= ezipets("prix spécial\ndu public", "podium/oediv3") ? link_to(image_tag("podium/oediv3.png"), root_url, id: "oediv3") : nil %>
+          <%= ezipets("bonus",     "podium/oediv2") ? link_to(image_tag("podium/oediv2.png"), root_url, id: "oediv2") : nil %>
+          <%# ezipets("prix",             "podium/step3") ? link_to(image_tag("podium/step3.png"), root_url, id: "step3") : nil %>
+          <%# ezipets("villermé",         "podium/step4") ? link_to(image_tag("podium/step4.png"), root_url, id: "step4") : nil %>
+          <%# ezipets("partenaires",      "podium/step5") ? link_to(image_tag("podium/step5.png"), root_url, id: "step5") : nil %>
+        </div>
+      </div>
+
+<!-- id="clap" -->
+      <div class="yui3-u-1-3"></div>
+    </div>
+
+    <div id="contentSouth">Avec l’aimable autorisation de Dalkia, CCMSA et la FNBTP.</div>
+  </div><!-- // fin de content -->
+
+  <div id="footer">
+    <div class="yui3-g">
+      <div class="yui3-u-1-5"></div>
+      <div class="yui3-u-4-5">
+        <div id="footerEast">
+          <img src="/assets/y0B.jpg" usemap="#partners" alt="Cliquez sur son logo pour accéder au site partenaire.">
+          <map name="partners"> <!-- left, top, right, bottom -->
+            <area coords="0,0,61,68" href="http://direccte.gouv.fr/-accueil-3-.html" alt="DIRECCTE LR" target="_blank">
+            <area coords="61,0,160,52" href="http://www.carsat-lr.fr/" alt="Carsat LR" target="_blank">
+            <area coords="165,0,226,66" href="http://www.annuaire.com/restauration-collective/akte-services-akte-restauration-501907836/" alt="Akté" target="_blank">
+            <area coords="226,0,294,66" href="http://altamira-films.com/altamira-films/Accueil.html" alt="Altamira" target="_blank">
+            <area coords="294,0,368,58" href="http://www.ametra.asso.fr/WD160AWP/WD160Awp.exe/CONNECT/Portail_AmetraMontpellier" alt="AMETRA" target="_blank">
+            <area coords="368,0,456,56" href="http://www.apave.com/" alt="Apave" target="_blank">
+            <area coords="468,10,568,56" href="http://www.ardence.fr/" alt="Ardence" target="_blank">
+            <area coords="568,10,667,56" href="http://www.montpellier.cci.fr/" alt="CCI Montpellier" target="_blank">
+            <area coords="61,54,133,100" href="http://www.fhp-lr.com/" alt="FHP LR" target="_blank">
+            <area coords="134,66,223,90" href="http://www.lalettrem.fr/" alt="Lettre M" target="_blank">
+            <area coords="223,65,312,90" href="http://www.objectif-lr.com/" alt="Objectif LR" target="_blank">
+            <area coords="316,59,423,94" href="http://www.preventionbtp.fr/" alt="OPPBTP" target="_blank">
+            <area coords="424,57,541,97" href="http://www.livres-medicaux.com/" alt="Sauramps" target="_blank">
+            <area coords="541,57,636,97" href="http://www.thau-sante-travail.fr/" alt="Thau Santé Travail" target="_blank">
+          </map>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- id="inscriptions" -->
+  <div id="feedbacks" class="yui3-loading">
+<!-- id="dBw" -->
+    <div id="fContainer" class="yui3-widget-bd"></div>
+  </div>
+
+</div><!-- // fin de main -->

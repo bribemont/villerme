@@ -1,0 +1,40 @@
+<% @candidates.each do |candidate| %>
+<div class="candid">
+<h2>Titre</h2><p><%= candidate. f1 %></p>
+<h3>Année de réalisation</h3><p><%= candidate. f2 %></p>
+<h3>Durée</h3><p><%= candidate. f3 %></p>
+<h3>Support</h3><p><%= candidate. f4 %></p>
+<h3>Réalisation externe ?</h3><p><%= candidate. r1 %></p>
+<h3>Dans ce cas, indiquez les coordonnées de l’entreprise de production</h3><p><%= candidate. r2 %></p>
+<h3>Réalisateur</h3><p><%= candidate. e1 %></p>
+<h3>Scénariste</h3><p><%= candidate. e2 %></p>
+<h3>Cameramen</h3><p><%= candidate. e3 %></p>
+<h3>Monteur</h3><p><%= candidate. e4 %></p>
+<h3>Musiciens</h3><p><%= candidate. e5 %></p>
+<h3>Autres</h3><p><%= candidate. e6 %></p>
+<h3>Le film a-t-il été conçu et réalisé avec des spécialistes de la santé-sécurité au travail ?</h3><p><%= candidate. s1 %></p>
+<h3>Si oui, lesquels ?</h3><p><%= candidate. s2 %></p>
+<h3>Présence de comédiens professionnels ?</h3><p><%= candidate. f8 %></p>
+<h3>Présence de salarié(es) de l’entreprise ?</h3><p><%= candidate. f9 %></p>
+<h3>Synopsis</h3><p><%= candidate. f10 %></p>
+<h3>Autres informations utiles</h3><p><%= candidate. f11 %></p>
+<h3>Dénomination</h3><p><%= candidate. o1 %></p>
+<h3>Siège social (adresse)</h3><p><%= candidate. o2 %></p>
+<h3>Groupe (s’il y a lieu)</h3><p><%= candidate. o3 %></p>
+<h3>Domaine d’activité</h3><p><%= candidate. o4 %></p>
+<h3>Nombre de salariés</h3><p><%= candidate. o5 %></p>
+<h3>Adresse courriel du contact</h3><p><%= candidate. email %></p>
+<h3>Autres informations utiles</h3><p><%= candidate. o6 %></p>
+<h3>Quel est le service de l’entreprise qui a demandé la réalisation du film ?</h3><p><%= candidate. a1 %></p>
+<h3>Quels sont les motifs de cette demande ?</h3><p><%= candidate. a2 %></p>
+<h3>La réalisation du film est-elle un élément d’une stratégie globale ?</h3><p><%= candidate. a3 %></p>
+<h3>Quel est le public visé ?</h3><p><%= candidate. a4 %></p>
+<h3>Quels sont les résultats attendus ?</h3><p><%= candidate. a5 %></p>
+<h3>Quelles sont (ont été) les circonstances de diffusion ?</h3><p><%= candidate. a6 %></p>
+<h3>Quels sont les résultats constatés ?</h3><p><%= candidate. a7 %></p>
+<h3>Avez-vous avez mis en place un système d’évaluation de ces résultats ?</h3><p><%= candidate. a8 %></p>
+<h3>Quelles ont été les réactions du public visé ?</h3><p><%= candidate. a9 %></p>
+<h3>Autres informations utiles</h3><p><%= candidate. a10 %></p>
+<h3>Envoyé le</h3><p><%= candidate. created_at %></p>
+</div>
+<% end %>

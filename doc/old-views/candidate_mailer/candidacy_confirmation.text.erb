@@ -1,0 +1,38 @@
+Nous vous remercions pour votre candidature et vous rappelons qu'elle ne sera validée qu'à réception du support CD ou DVD (Mac ou PC) du film : 
+
+Rencontres Villermé
+Espace Richter
+Rue Vendémiaire, Bt E
+CS 29 555
+34 961 Montpellier cedex 2
+
+Titre : <%= @candidate.f1 %>
+Date de réalisation : <%= @candidate.f2 %>
+Durée : <%= @candidate.f3 %>
+<% if @candidate.r1? %>
+Entreprise de production pour la réalisation externe : <%= @candidate.r2 %>
+<% end %>
+Réalisateur : <%= @candidate.e1 %>
+<% if @candidate.r1? %>
+Spécialistes de la santé-sécurité au travail ayant participé à la conception et à la réalisation du film : <%= @candidate.s2 %>
+<% end %>
+Présence de comédiens professionnels ? <%= @candidate.f8? ? "Oui" : "Non" %>
+Présence de salarié(e)s de l’entreprise ? <%= @candidate.f9? ? "Oui" : "Non" %>
+Synopsis : <%= @candidate.f10 %>
+Dénomination : <%= @candidate.o1 %>
+Siège social (adresse) : <%= @candidate.o2 %>
+Domaine d’activité : <%= @candidate.o4 %>
+Nombre de salariés : <%= @candidate.o5 %>
+Quel est le service de l’entreprise qui a demandé la réalisation du film ? <%= @candidate.a1 %>
+Quels sont les motifs de cette demande ? <%= @candidate.a2 %>
+La réalisation du film est-elle un élément d’une stratégie globale ? <%= @candidate.a3? ? "Oui" : "Non" %>
+Quel est le public visé ? <%= @candidate.a4 %>
+Quels sont les résultats attendus ? <%= @candidate.a5 %>
+Quelles sont (ont été) les circonstances de diffusion ? <%= @candidate.a6 %>
+Quels sont les résultats constatés ? <%= @candidate.a7 %>
+Avez-vous mis en place un système d’évaluation de ces résultats ? <%= @candidate.a8? ? "Oui" : "Non" %>
+Quelles ont été les réactions du public visé ? <%= @candidate.a9 %>
+
+Les Rencontres Villermé
+Fondation Entreprendre
+Université Montpellier I
