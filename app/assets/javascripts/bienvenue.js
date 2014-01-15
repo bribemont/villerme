@@ -100,6 +100,42 @@ function(Y) {
         node: "#header h1",
         points: [a.CC, a.RC]
     });
+    var uHaaMBgaXBJW0 = new Y.Overlay({
+        width: "150px",
+        height: "150px",
+        bodyContent: '<a href=# id=retsiger><img src="/z/png/uHaaMBgaXBJW0.png" alt="Inscriptions 2014" style="width:150px;height:150px;"></a>',
+        zIndex: 2
+    });
+    uHaaMBgaXBJW0.render("#uHaaMBgaXBJW0");
+    uHaaMBgaXBJW0.set("align", {
+        node: "#visuel",
+        points: [a.BC, a.TC]
+    });
+    register = new Y.Panel({
+        srcNode: '#register',
+        headerContent: 'Je ’inscris aux Rencontres',
+        width: 800,
+        height: 600,
+        zIndex: 6,
+        centered: true,
+        modal: true,
+        visible: false,
+        render: true
+    });
+    register.addButton({
+        value: 'Fermer',
+        section: Y.WidgetStdMod.FOOTER,
+        action: function(e) {
+            e.preventDefault();
+            register.hide();
+        }
+    });
+    Y.one('#retsiger').on('click',
+    function(e) {
+        e.preventDefault();
+        Y.one('#register').removeClass('yui3-loading');
+        register.show();
+    });
 
     var oT2tq9Av82QNm6 = new Y.Overlay({
         width: "151px",
