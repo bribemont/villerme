@@ -113,7 +113,7 @@ function(Y) {
     });
     register = new Y.Panel({
         srcNode: '#register',
-        headerContent: 'Je ’inscris aux Rencontres',
+        headerContent: 'Je m’inscris aux Rencontres',
         width: 800,
         height: 600,
         zIndex: 6,
