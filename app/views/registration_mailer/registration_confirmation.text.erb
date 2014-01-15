@@ -22,19 +22,6 @@ Vous serez présent(e)
 <%= "au déjeuner du 22 mars, à 12 h 30" if @registration.lunch_2 %>
 <% end %>
 
-<% unless @registration.guest %>
-Votre règlement (obligatoire pour que l’inscription soit effective) : <%= @registration.charge %> € <% unless @registration.payment.nil? %><%= @registration.payment == true ? "par chèque bancaire à l’ordre de : Monsieur l’Agent Comptable de l’Université Montpellier I" : "par virement administratif. Dans ce cas, joindre IMPERATIVEMENT AU PREALABLE le bon d’engagement ou le bon de commande." %><% end %>
-<% unless @registration.invoice.nil? %><%= @registration.invoice == true ? "Vous souhaitez recevoir une facture au nom de votre établissement." : "Vous souhaitez recevoir une facture à votre nom." %><% end %>
-<% end %>
-
-Adresse à laquelle envoyer le règlement * :
-
-Fondation Université Montpellier 1 ENTREPRENDRE
-CS 29555
-34961 Montpellier cedex 2
-
-* EN CAS D’ANNULATION AU DELÀ DU 13 MARS, AUCUN REMBOURSEMENT NE POURRA ÊTRE EFFECTUÉ. VEUILLEZ NOUS EN EXCUSER.
-
 Pour corriger ces informations : <%= edit_registration_url(@registration.id) %>
 
 Cordialement,
