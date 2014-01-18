@@ -1,4 +1,3 @@
-
 Votre inscription au Rencontres Villermé a bien été enregistrée :
 
 Votre structure
@@ -20,6 +19,7 @@ Vous participerez
 Vous serez présent(e)
 <%= "au déjeuner du 20 mars, à 12 h 30" if @registration.lunch_1 %>
 <%= "au déjeuner du 22 mars, à 12 h 30" if @registration.lunch_2 %>
+<%= "à la remise des prix le 22 mars, à 16h" if @registration.invoice %>
 <% end %>
 
 Pour corriger ces informations : <%= edit_registration_url(@registration.id) %>
