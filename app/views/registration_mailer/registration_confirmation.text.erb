@@ -1,4 +1,4 @@
-Merci, votre inscription au Rencontres Villermé a bien été enregistrée.
+Merci, votre inscription aux Rencontres Villermé a bien été enregistrée.
 
 Récapitulatif des informations vous concernant :
 
@@ -11,15 +11,14 @@ Votre téléphone : <%= @registration.phone %>
 <%= @registration.fax ? ['Votre fax',@registration.fax].join(' : ') : nil %>
 
 Vous participerez
-<%= "à la journée du 20 mars : Prévenir la pénibilité au travail : comment agir ?" if @registration.hardship %>  
-<%= "à la rencontre dédicace avec Jean Auroux (Auditorium du Musée Fabre)"         if @registration.dedication %>
-<%= "à la journée du 22 mars : Festival du film La Santé au travail"               if @registration.festival %>  
+<%= "au séminaire du 19 mars : Management de proximité et santé au travail" if @registration.hardship %>  
+<%= "à la journée du 20 mars : Festival du film La Santé au travail"               if @registration.festival %>  
 
 <% if @registration.lunch_1 || @registration.lunch_2 %>
 Vous serez présent(e)
-<%= "au déjeuner du 20 mars, à 12 h 30" if @registration.lunch_1 %>
-<%= "au déjeuner du 22 mars, à 12 h 30" if @registration.lunch_2 %>
-<%= "à la remise des prix le 22 mars, à 16h" if @registration.invoice %>
+<%= "au déjeuner du 19 mars, à 12 h 30" if @registration.lunch_1 %>
+<%= "au déjeuner du 20 mars, à 12 h 30" if @registration.lunch_2 %>
+<%= "à la remise des prix le 20 mars, à 16h" if @registration.invoice %>
 <% end %>
 
 Pour corriger ces informations : <%= edit_registration_url(@registration.id) %>
