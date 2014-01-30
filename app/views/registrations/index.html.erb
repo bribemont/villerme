@@ -3,7 +3,7 @@
 <pre>
 
 <% @registrations.each do |registration| %>
-"<%= registration.institution %>" "<%= registration.last_name %>" "<%= registration.first_name %>" "<%= registration.function %>" "<%= registration.address.gsub(/\s+/, ' ') %>" "" "<%= registration.zip %>" "<%= registration.city %>" "<%= registration.phone %>" "<%= registration.fax if registration.fax %>" "<%= registration.email %>" "<%= registration.hardship == true ? 1 : 0 %>" "<%= registration.lunch_1 == true ? 1 : 0 %>" "<%= registration.festival == true ? 1 : 0 %>" "<%= registration.lunch_2 == true ? 1 : 0 %>" "<%= registration.invoice == true ? 1 : 0 %>"
+"<%= registration.institution %>" "<%= registration.last_name %>" "<%= registration.first_name %>" "<%= registration.function %>" "<%= registration.address.gsub(/\s+/, ' ') %>" "" "<%= registration.zip %>" "<%= registration.city %>" "<%= registration.phone %>" "<%= registration.email %>" "<%= registration.hardship == true ? 1 : 0 %>" "<%= registration.lunch_1 == true ? 1 : 0 %>" "<%= registration.festival == true ? 1 : 0 %>" "<%= registration.lunch_2 == true ? 1 : 0 %>" "<%= registration.invoice == true ? 1 : 0 %>"
 <% end %>
 </pre>
 
