@@ -1,22 +1,16 @@
 Merci, votre inscription aux Rencontres Villermé a bien été enregistrée.
+<% if @registration.lunch_1 || @registration.hardship %>
+mais la capacité d'accueil étant atteinte pour les evenements du 19 mars,
+vous êtes en liste d'attente.
+Nous vous informerons d'un éventuel désistement.
+<% end %>
 
-Récapitulatif des informations vous concernant :
+<% if @registration.festival % %>
+Vous participerez à la journée du 20 mars : Festival du film La Santé au travail
+<% end %>
 
-Nom de votre établissement : <%= @registration.institution %>
-Activité principale : <%= @registration.activity %>
-Adresse : <%= @registration.address %> <%= @registration.zip %> <%= @registration.city %>
-
-Vous : <%= @registration.first_name %> <%= @registration.last_name %> (<%= @registration.function %>)
-Votre téléphone : <%= @registration.phone %>
-<%= @registration.fax ? ['Votre fax',@registration.fax].join(' : ') : nil %>
-
-Vous participerez
-<%= "au séminaire du 19 mars : Management de proximité et santé au travail" if @registration.hardship %>  
-<%= "à la journée du 20 mars : Festival du film La Santé au travail"               if @registration.festival %>  
-
-<% if @registration.lunch_1 || @registration.lunch_2 %>
+<% if @registration.lunch_2 || @registration.invoice %>
 Vous serez présent(e)
-<%= "au déjeuner du 19 mars, à 12 h 30" if @registration.lunch_1 %>
 <%= "au déjeuner du 20 mars, à 12 h 30" if @registration.lunch_2 %>
 <%= "à la remise des prix le 20 mars, à 16h" if @registration.invoice %>
 <% end %>
@@ -30,3 +24,16 @@ fondation@univ-montp1.fr
 Cordialement,
 
 Les Rencontres Villermé 
+
+
+
+
+Récapitulatif des informations vous concernant :
+
+Nom de votre établissement : <%= @registration.institution %>
+Activité principale : <%= @registration.activity %>
+Adresse : <%= @registration.address %> <%= @registration.zip %> <%= @registration.city %>
+
+Vous : <%= @registration.first_name %> <%= @registration.last_name %> (<%= @registration.function %>)
+Votre téléphone : <%= @registration.phone %>
+<%= @registration.fax ? ['Votre fax',@registration.fax].join(' : ') : nil %>
